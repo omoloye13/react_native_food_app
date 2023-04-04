@@ -19,13 +19,14 @@ const BottomCard = ({ name, title }) => {
 			{/* bottom texts */}
 			<View
 				style={{
-					margin: 25,
+					marginTop: 12,
+
 					flexDirection: "row",
 					justifyContent: "space-between",
 				}}
 			>
 				<Text
-					style={{ fontFamily: "Poppins-bold", fontSize: 15, marginLeft: 0 }}
+					style={{ fontFamily: "Poppins-bold", fontSize: 15, marginLeft: 22 }}
 				>
 					{title}
 				</Text>
@@ -35,6 +36,7 @@ const BottomCard = ({ name, title }) => {
 							fontFamily: "Poppins-regular",
 							fontSize: 15,
 							color: "#2a9d8f",
+							marginRight: 15,
 						}}
 					>
 						See all

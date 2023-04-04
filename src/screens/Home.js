@@ -51,7 +51,7 @@ const Home = () => {
 									FoodItem={item}
 									marginLeft={index == 0 ? 20 : 12}
 									marginRight={index == item.length - 1 ? 20 : 0}
-									onPress={() => navigation.navigate("FoodDisplay")}
+									onPressItem={() => navigation.navigate("FoodDisplay")}
 								/>
 							);
 						}}

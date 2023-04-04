@@ -1,13 +1,12 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
-import { useNavigation } from "@react-navigation/native";
 import BottomCard from "./BottomCard";
 
-const FoodMenu = ({ FoodItem, marginLeft, marginRight }) => {
-	const navigation = useNavigation();
+const FoodMenu = ({ FoodItem, marginLeft, marginRight, onPressItem }) => {
+	// const navigation = useNavigation();
 	return (
 		<View>
-			<View
+			<TouchableOpacity
 				style={{
 					backgroundColor: "white",
 					marginTop: 0,
@@ -15,16 +14,16 @@ const FoodMenu = ({ FoodItem, marginLeft, marginRight }) => {
 					marginLeft: marginLeft,
 					margin: marginRight,
 					borderRadius: 12,
-					height: 220,
+					height: 280,
 					width: 240,
 				}}
+				onPress={onPressItem}
 			>
-				<TouchableOpacity>
+				<View>
 					<Image
 						source={FoodItem.image}
 						// resizeMode="cover"
 						style={{ width: 220, height: 150, borderRadius: 12 }}
-						onPress={() => navigation.navigate("FoodDisplay")}
 					/>
 
 					{/* rating */}
@@ -51,7 +50,7 @@ const FoodMenu = ({ FoodItem, marginLeft, marginRight }) => {
 							<Text style={{ fontWeight: "bold" }}>{FoodItem.rating}</Text>
 						</View>
 					</View>
-				</TouchableOpacity>
+				</View>
 
 				<View style={{ padding: 12 }}>
 					<Text
@@ -75,7 +74,7 @@ const FoodMenu = ({ FoodItem, marginLeft, marginRight }) => {
 						${FoodItem.price.toFixed(2)}
 					</Text>
 				</View>
-			</View>
+			</TouchableOpacity>
 			{/* <View style={{ flexDirection: "row" }}>
 				<BottomCard />
 			</View> */}
