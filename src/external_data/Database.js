@@ -22,7 +22,7 @@ export const categories = [
 	},
 	{
 		id: 3,
-		title: "Is trading safe for newbies",
+		title: "pasta",
 		image: require("../../assets/images/dish.jpg"),
 		price: 30,
 		rating: 5,

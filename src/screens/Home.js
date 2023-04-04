@@ -1,38 +1,65 @@
-import { View, SafeAreaView } from "react-native";
+import { View, Text, Image, ImageBackground, FlatList } from "react-native";
 import React from "react";
 import TopHeader from "../components/TopHeader";
 import Hero from "../components/Hero";
 import Form from "../components/Form";
-import Carousel from "../components/Carousel";
+// import SectionTwo from "../components/sectionTwo";
+import Section from "../components/Section";
+import { categories } from "../external_data/Database";
+import FoodMenu from "../components/FoodMenu";
+import BottomCard from "../components/BottomCard";
+import { useNavigation } from "@react-navigation/native";
 
 const Home = () => {
+	const navigation = useNavigation();
 	return (
-		<SafeAreaView>
-			<View
-				style={{
-					marginTop: 0,
-					backgroundColor: "#2a9d8f",
-					borderTopLeftRadius: 8,
-					borderTopRightRadius: 8,
-					height: 270,
-					padding: 0,
-					width: "100%",
-				}}
+		<View style={{ flex: 1 }}>
+			<ImageBackground
+				source={require("../../assets/images/imgBG.jpg")}
+				resizeMode="cover"
+				style={{ width: "100%", height: "100%" }}
 			>
 				<TopHeader />
-				<View style={{ marginTop: 10 }}>
+				<View style={{ marginTop: 75 }}>
 					<Hero
 						name={"Delicious food ready to be delivered for you"}
 						image={require("../../assets/images/soup.png")}
 					/>
 				</View>
-
 				<Form />
-				<View>
-					<Carousel name={"Recommended"} title={"Near of you"} />
+
+				{/* categories */}
+				<View
+					style={{
+						flex: 1,
+						borderTopLeftRadius: 25,
+						borderTopRightRadius: 25,
+						backgroundColor: "#F8F8F8",
+					}}
+				>
+					<Section title="Recommended" />
+
+					{/* list of food items */}
+					<FlatList
+						data={categories}
+						horizontal
+						keyExtractor={(item) => item.id}
+						renderItem={({ item, index }) => {
+							console.log("items", item);
+							return (
+								<FoodMenu
+									FoodItem={item}
+									marginLeft={index == 0 ? 20 : 12}
+									marginRight={index == item.length - 1 ? 20 : 0}
+									onPress={() => navigation.navigate("FoodDisplay")}
+								/>
+							);
+						}}
+					/>
+					<BottomCard title={"Nearby Places"} />
 				</View>
-			</View>
-		</SafeAreaView>
+			</ImageBackground>
+		</View>
 	);
 };
 

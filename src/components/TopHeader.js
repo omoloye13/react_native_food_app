@@ -10,9 +10,16 @@ import React from "react";
 const TopHeader = () => {
 	return (
 		<SafeAreaView>
-			<View style={{ marginTop: 55, paddingLeft: 10 }}>
+			<View
+				style={{
+					marginTop: 15,
+					paddingLeft: 10,
+					flex: Platform.OS === "ios" ? 0.6 : 0.5,
+				}}
+			>
 				<View
 					style={{
+						marginTop: Platform.OS === "ios" ? 60 : 35,
 						flexDirection: "row",
 						justifyContent: "space-around",
 					}}

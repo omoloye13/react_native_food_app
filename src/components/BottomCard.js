@@ -1,76 +1,21 @@
 import { View, Text, TouchableOpacity, Image, FlatList } from "react-native";
 import React from "react";
-import FoodMenu from "./FoodMenu";
-import { categories } from "../external_data/Database";
 
-const Carousel = ({ name, title }) => {
+const BottomCard = ({ name, title }) => {
 	return (
 		// Background
 		<View
 			style={{
 				backgroundColor: "white",
-				height: 500,
-				borderTopRightRadius: 12,
-				borderTopLeftRadius: 12,
-				width: "100%",
-				marginRight: 100,
-				alignSelf: "stretch",
-				marginTop: 30,
+				// height: 500,
+				// borderTopRightRadius: 12,
+				// borderTopLeftRadius: 12,
+				// width: "100%",
+				// marginRight: 100,
+				// alignSelf: "stretch",
+				// marginTop: 30,
 			}}
 		>
-			{/* Header texts */}
-			<View
-				style={{
-					margin: 19,
-					flexDirection: "row",
-					justifyContent: "space-between",
-				}}
-			>
-				<Text
-					style={{ fontFamily: "Poppins-bold", fontSize: 15, marginLeft: 5 }}
-				>
-					{name}
-				</Text>
-				<TouchableOpacity>
-					<Text
-						style={{
-							fontFamily: "Poppins-regular",
-							fontSize: 15,
-							color: "#2a9d8f",
-						}}
-					>
-						See all
-					</Text>
-				</TouchableOpacity>
-			</View>
-			{/* categories */}
-			<View
-				style={{
-					flex: 1,
-					borderTopLeftRadius: 25,
-					borderTopRightRadius: 25,
-					backgroundColor: "#F8F8F8",
-				}}
-			>
-				{/* list of food items */}
-				<FlatList
-					data={categories}
-					horizontal
-					keyExtractor={(item) => item.id}
-					renderItem={({ item, index }) => {
-						console.log("items", item);
-						return (
-							<FoodMenu
-								FoodItem={item}
-								marginLeft={index == 0 ? 20 : 12}
-								marginRight={index == item.length - 1 ? 20 : 0}
-							/>
-						);
-					}}
-				/>
-			</View>
-			{/* <FoodMenu /> */}
-			{/* food menu slides */}
 			{/* bottom texts */}
 			<View
 				style={{
@@ -169,4 +114,4 @@ const Carousel = ({ name, title }) => {
 	);
 };
 
-export default Carousel;
+export default BottomCard;

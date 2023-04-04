@@ -13,7 +13,14 @@ const Form = ({ icon }) => {
 
 	return (
 		<SafeAreaView>
-			<View style={{ marginTop: 8, paddingTop: 3, paddingLeft: 25 }}>
+			<View
+				style={{
+					marginTop: 10,
+					paddingTop: 3,
+					paddingLeft: 25,
+					marginBottom: 30,
+				}}
+			>
 				<View
 					style={{
 						flexDirection: "row",

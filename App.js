@@ -7,6 +7,7 @@ import { useFonts } from "expo-font";
 import StackScreens from "./src/navigations/StackScreens";
 
 import BottomTabs from "./src/navigations/BottomTabs";
+import FoodDisplay from "./src/screens/FoodDisplay";
 export default function App() {
 	const [fontsLoaded] = useFonts({
 		"Poppins-bold": require("./assets/fonts/Poppins-Bold.ttf"),
@@ -21,6 +22,7 @@ export default function App() {
 		<NavigationContainer>
 			{/* <BottomTabs /> */}
 			<StackScreens />
+			{/* <FoodDisplay /> */}
 		</NavigationContainer>
 	);
 }
