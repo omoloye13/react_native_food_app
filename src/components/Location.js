@@ -6,7 +6,7 @@ const Location = () => {
 		<View
 			style={{
 				flexDirection: "row",
-				marginTop: 15,
+				marginTop: 10,
 				justifyContent: "space-around",
 			}}
 		>

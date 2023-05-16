@@ -9,16 +9,26 @@ const FoodDetails = () => {
 			</Text>
 			<Text style={{ fontFamily: "Poppins-regular", fontSize: 15 }}>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-				temporibus hic libero nesciunt iure quod vitae fugit quia nihil iusto.
+				temporibus hic libero nesciunt iure quod vitae fugit quia nihil iusto{" "}
 				<Text style={{ color: "#2a9d8f", fontFamily: "Poppins-bold" }}>
-					Read More
+					Read More...
 				</Text>
 			</Text>
+			<Image
+				source={require("../../assets/images/map.jpeg")}
+				style={{
+					width: "100%",
+					height: 160,
+					borderRadius: 10,
+				}}
+			/>
 			<View
 				style={{
-					marginTop: 110,
 					flexDirection: "row",
-					justifyContent: "space-around",
+					justifyContent: "space-between",
+					position: "absolute",
+					// left:0,
+					top: 285,
 				}}
 			>
 				<TouchableOpacity
@@ -28,7 +38,7 @@ const FoodDetails = () => {
 						borderColor: "#e9c46a",
 						borderRadius: 20,
 						padding: 10,
-						width: "40%",
+						width: "45%",
 						// justifyContent: "space-around",
 					}}
 				>
@@ -46,7 +56,7 @@ const FoodDetails = () => {
 							fontFamily: "Poppins-semibold",
 							fontSize: 12,
 							color: "#e9c46a",
-							marginLeft: 12,
+							marginLeft: 15,
 						}}
 					>
 						Chat
@@ -58,7 +68,8 @@ const FoodDetails = () => {
 						backgroundColor: "#e9c46a",
 						borderRadius: 20,
 						padding: 10,
-						width: "40%",
+						width: "45%",
+						marginLeft: 40,
 						// justifyContent: "space-around",
 					}}
 				>
@@ -67,7 +78,7 @@ const FoodDetails = () => {
 							fontFamily: "Poppins-semibold",
 							fontSize: 12,
 							color: "white",
-							marginLeft: 12,
+							// marginLeft: 12,
 							textAlign: "center",
 						}}
 					>

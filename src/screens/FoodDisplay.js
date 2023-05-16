@@ -18,7 +18,6 @@ const FoodDisplay = () => {
 				source={require("../../assets/images/breakfast.jpg")}
 				resizeMode="cover"
 				style={{
-					width: "100%",
 					height: 300,
 					borderRadius: 10,
 				}}
@@ -70,6 +69,7 @@ const FoodDisplay = () => {
 					</TouchableOpacity>
 				</View>
 			</ImageBackground>
+
 			<View
 				style={{
 					flexDirection: "row",
@@ -94,40 +94,52 @@ const FoodDisplay = () => {
 					style={{
 						flexDirection: "row",
 						justifyContent: "space-around",
-						marginTop: 15,
+						marginTop: 20,
 						backgroundColor: "#e5e5e5",
-						borderRadius: 10,
+						borderRadius: 8,
 						padding: 8,
+						width: 80,
+						height: 40,
 					}}
 				>
-					<Image
-						source={require("../../assets/icons/minus-sign.png")}
+					<View
 						style={{
-							tintColor: "#e9c46a",
-							width: 20,
-							height: 18,
-							marginRight: 5,
-							marginTop: 7,
+							backgroundColor: "white",
+							borderRadius: 40,
+							marginLeft: 3,
+							padding: 3,
+							marginTop: 3,
 						}}
-					/>
+					>
+						<Image
+							source={require("../../assets/icons/minus-sign.png")}
+							style={{
+								tintColor: "#e9c46a",
+								width: 10,
+								height: 12,
+
+								marginRight: 2,
+								marginTop: 0,
+							}}
+						/>
+					</View>
+
 					<Text style={{ padding: 5 }}>1</Text>
 					<View
 						style={{
-							// flexDirection: "row",
-							// justifyContent: "space-around",
-							// marginTop: 15,
 							backgroundColor: "#e9c46a",
-							borderRadius: 20,
-							marginLeft: 10,
+							borderRadius: 40,
+							marginLeft: 5,
 							padding: 5,
+							marginTop: 3,
 						}}
 					>
 						<Image
 							source={require("../../assets/icons/plus.png")}
 							style={{
 								tintColor: "white",
-								width: 10,
-								height: 10,
+								width: 8,
+								height: 12,
 							}}
 						/>
 					</View>
@@ -135,6 +147,8 @@ const FoodDisplay = () => {
 			</View>
 			<Location />
 			<FoodDetails />
+
+			{/* <MapScreen /> */}
 		</View>
 	);
 };
